@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rui Correia - Executivo Sénior | Marketing e Desenvolvimento de Negócio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a52;
+            --secondary: #2c5aa0;
+            --accent: #3ecf8e;
+            --light: #f5f7fa;
+            --dark: #1a1a1a;
+            --text: #333;
+            --border: #e0e6ed;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 60px 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .header-photo {
+            flex-shrink: 0;
+            order: 1;
+            background: transparent;
+        }
+
+        .header-photo img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: none;
+            padding: 0;
+            margin: 0;
+            object-fit: cover;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            display: block;
+            background: transparent;
+        }
+
+        .header-text {
+            flex: 1;
+            min-width: 280px;
+            order: 2;
+            text-align: left;
+            padding-top: 5px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .title {
+            font-size: 1.2em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .header-contact {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+            border-bottom-color: var(--accent);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Sections */
+        section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            scroll-margin-top: 100px;
+        }
+
+        section h2 {
+            color: var(--primary);
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+        /* Resumo Executivo */
+        .executive-summary {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Proposta de Valor */
+        .value-props {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .value-card {
+            padding: 20px;
+            background: var(--light);
+            border-left: 4px solid var(--accent);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(62,207,142,0.1);
+        }
+
+        .value-card strong {
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* Competências */
+        .competency-section {
+            margin-bottom: 25px;
+        }
+
+        .competency-title {
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .competency-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .competency-tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .competency-tag:hover {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        /* Experiência */
+        .experience-item {
+            margin-bottom: 35px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .job-title {
+            color: var(--secondary);
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .job-meta {
+            color: #999;
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .job-description {
+            color: #555;
+        }
+
+        .job-description li {
+            margin-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* Formação */
+        .education-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .degree {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .institution {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* Certificações */
+        .cert-year {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .cert-list {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .cert-list li {
+            padding: 8px 0;
+            color: #555;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .cert-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Idiomas */
+        .language-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .language-item {
+            padding: 15px;
+            background: var(--light);
+            border-radius: 4px;
+        }
+
+        .language-name {
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        .language-level {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* Atividades Profissionais */
+        .activity-list {
+            list-style: none;
+        }
+
+        .activity-list li {
+            padding: 12px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+
+        .activity-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Expandable Content */
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .exp-toggle {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            margin-left: 20px;
+            flex-shrink: 0;
+        }
+
+        .exp-toggle:hover {
+            background: #2cb86a;
+            transform: scale(1.05);
+        }
+
+        .exp-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .exp-content.expanded {
+            max-height: 1000px;
+        }
+
+        .exp-summary {
+            margin-top: 15px;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-signature {
+            margin: 25px 0 35px 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .footer-signature img {
+            max-width: 350px;
+            width: 80%;
+            height: auto;
+            opacity: 0.95;
+            filter: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .title {
+                font-size: 1em;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            nav a {
+                text-align: center;
+                border-bottom: none;
+                border-right: 3px solid transparent;
+            }
+
+            nav a:hover {
+                border-right-color: var(--accent);
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .value-props {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print */
+        @media print {
+            nav {
+                display: none;
+            }
+
+            section {
+                page-break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid var(--border);
+            }
+        }
+
+        /* Scroll smooth */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Link decoration */
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-photo">
+                <img src="foto_rui_final.jpg" alt="Rui Correia">
+            </div>
+            <div class="header-text">
+                <h1>RUI CORREIA</h1>
+                <p class="title">Executivo Sénior | Marketing e Desenvolvimento de Negócio</p>
+            </div>
+        </div>
+        <div class="header-contact">
+            <div class="contact-info">
+                <span>📍 Praia da Torreira, Portugal</span>
+                <a href="tel:+351913065997">+351 913 065 997</a>
+                <a href="mailto:ruimtcorreia@icloud.com">ruimtcorreia@icloud.com</a>
+                <a href="https://linkedin.com/in/ruimtcorreia" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#resumo">Resumo</a></li>
+            <li><a href="#proposta">Proposta</a></li>
+            <li><a href="#competencias">Competências</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#formacao">Formação</a></li>
+            <li><a href="#atividades">Atividades</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Resumo Executivo -->
+        <section id="resumo">
+            <h2>Resumo Executivo</h2>
+            <div class="executive-summary">
+                <p>Executivo sénior com mais de <span class="highlight">20 anos de experiência</span> em marketing, vendas e desenvolvimento de negócio em FMCG, vinho, bebidas, agroindústria e B2B. Carreira construída em direção comercial e marketing, com responsabilidades sobre P&L, estratégia, exportação, gestão de portefólio, key accounts, gestão de equipas e governance comercial.</p>
+
+                <p style="margin-top: 15px;">Liderei o crescimento da Global Wines de <span class="highlight">8M€ para 15M€</span>, com quota de exportação a passar de 30% para 51% e presença a crescer de 31 para 45 mercados. Na Adega Mayor, contribuí para evolução de 3M€ para 5M€ e criação de novas equipas comerciais.</p>
+
+                <p style="margin-top: 15px;">Nos últimos 3 anos, integrei sustentabilidade como alavanca de negócio: <span class="highlight">Chief Sustainability Officer</span> na LOBA (B Corp), com parcerias B2B SaaS (Smarthead, Ecochain, FuturePlus, Net Zero Cloud) e consultoria independente paralela.</p>
+            </div>
+        </section>
+
+        <!-- Proposta de Valor -->
+        <section id="proposta">
+            <h2>Proposta de Valor</h2>
+            <div class="value-props">
+                <div class="value-card">
+                    <strong>Crescimento e Estratégia Comercial</strong>
+                    Desenho e execução de estratégias de crescimento baseadas em gestão de portefólio, otimização de preços e alocação comercial orientada a margem.
+                </div>
+                <div class="value-card">
+                    <strong>Desenvolvimento de Mercados e Canais</strong>
+                    Negociação estratégica com key accounts, gestão de distribuidores e expansão internacional. Track record: 8M€→15M€, quota exportação 30%→51%, 45 mercados.
+                </div>
+                <div class="value-card">
+                    <strong>Liderança Transversal das Operações</strong>
+                    Alinhamento de vendas, marketing e operações. Forecasting, CRM, previsibilidade, motivação de equipas e execução consistente.
+                </div>
+                <div class="value-card">
+                    <strong>Transformação e Inovação</strong>
+                    Reestruturação comercial, implementação de CRM Salesforce, desenvolvimento de capacidades analíticas e identificação de oportunidades de crescimento.
+                </div>
+                <div class="value-card">
+                    <strong>Governance Comercial</strong>
+                    Reporting estruturado, KPIs, S&OP, alinhamento procura/oferta e decisão baseada em dados. Cadência de reuniões e disciplina comercial.
+                </div>
+                <div class="value-card">
+                    <strong>Gestão de Stakeholders e Influência</strong>
+                    Identificação, análise e envolvimento das partes interessadas. Gestão de expectativas, antecipação de conflitos e alinhamento para resultados.
+                </div>
+                <div class="value-card">
+                    <strong>Account-Based Growth e Alinhamento Executivo</strong>
+                    Integração estratégica de marketing e vendas através de Account-Based Marketing (ABM) focado em contas-chave. Alinhamento direto com administração e C-level para operações comerciais orientadas a crescimento.
+                </div>
+                <div class="value-card">
+                    <strong>Sustentabilidade como Diferencial</strong>
+                    ESG e negócio sustentável: B Corp, CSRD/ESRS, GRI, comunicação responsável. Desenvolvimento de valor alinhado com expectativas do mercado.
+                </div>
+            </div>
+        </section>
+
+        <!-- Competências -->
+        <section id="competencias">
+            <h2>Competências-Chave</h2>
+
+            <div class="competency-section">
+                <div class="competency-title">Estratégia Comercial e Crescimento</div>
+                <div class="competency-items">
+                    <span class="competency-tag">Go-to-market</span>
+                    <span class="competency-tag">Gestão de Portefólio</span>
+                    <span class="competency-tag">Pricing e Revenue</span>
+                    <span class="competency-tag">Trade Marketing</span>
+                    <span class="competency-tag">Internacionalização</span>
+                    <span class="competency-tag">Desenvolvimento de Negócio</span>
+                </div>
+            </div>
+
+            <div class="competency-section">
+                <div class="competency-title">Gestão Comercial e Operacional</div>
+                <div class="competency-items">
+                    <span class="competency-tag">Key Accounts</span>
+                    <span class="competency-tag">Forecasting</span>
+                    <span class="competency-tag">Pipeline Management</span>
+                    <span class="competency-tag">Salesforce CRM</span>
+                    <span class="competency-tag">Zoho CRM</span>
+                    <span class="competency-tag">S&OP</span>
+                    <span class="competency-tag">Reporting e KPIs</span>
+                </div>
+            </div>
+
+            <div class="competency-section">
+                <div class="competency-title">ESG e Sustentabilidade</div>
+                <div class="competency-items">
+                    <span class="competency-tag">CSRD/ESRS</span>
+                    <span class="competency-tag">GRI Standards</span>
+                    <span class="competency-tag">B Corp</span>
+                    <span class="competency-tag">ACV e Pegada Carbono</span>
+                    <span class="competency-tag">Net Zero Cloud</span>
+                    <span class="competency-tag">Greenwashing Prevention</span>
+                </div>
+            </div>
+
+            <div class="competency-section">
+                <div class="competency-title">Gestão de Stakeholders e Influência</div>
+                <div class="competency-items">
+                    <span class="competency-tag">Identificação de Stakeholders</span>
+                    <span class="competency-tag">Análise de Partes Interessadas</span>
+                    <span class="competency-tag">Gestão de Expectativas</span>
+                    <span class="competency-tag">Negociação e Influência</span>
+                    <span class="competency-tag">Antecipação de Conflitos</span>
+                    <span class="competency-tag">Alinhamento para Resultados</span>
+                </div>
+            </div>
+
+            <div class="competency-section">
+                <div class="competency-title">Liderança e Gestão</div>
+                <div class="competency-items">
+                    <span class="competency-tag">Liderança de Equipas</span>
+                    <span class="competency-tag">Gestão de P&L</span>
+                    <span class="competency-tag">Coaching Comercial</span>
+                    <span class="competency-tag">Gestão de Mudança</span>
+                    <span class="competency-tag">Recrutamento</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experiência -->
+        <section id="experiencia">
+            <h2>Experiência Profissional</h2>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="job-title">Consultor Sénior Independente</div>
+                        <div class="company">Estratégia Comercial, Desenvolvimento de Mercado e Consultoria de Liderança</div>
+                        <div class="job-meta">Abr 2026 - Presente | Portugal, Híbrido</div>
+                    </div>
+                    <button class="exp-toggle">Mostrar mais</button>
+                </div>
+
+                <div class="exp-content">
+                    <p style="margin-bottom: 12px; color: #666; font-style: italic;">Atividade independente interina após atribuição à CarmoForm; mantém atividade profissional enquanto procura uma posição executiva comercial permanente.</p>
+                    <ul class="job-description">
+                        <li>Apoio a PME e empresas de bens de consumo/agronegócio na transformação comercial, entrada no mercado e estratégia de go-to-market</li>
+                        <li>Aconselhamento a líderes e profissionais de vendas em eficácia comercial, liderança transformacional e comunicação de sustentabilidade, quando relevantes para a diferenciação comercial</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="job-title">Coordenação de Marketing</div>
+                        <div class="company">CarmoForm (Grupo CarmoWood)</div>
+                        <div class="job-meta">Set 2025 - Abr 2026 | Oliveira de Frades</div>
+                    </div>
+                    <button class="exp-toggle">Mostrar mais</button>
+                </div>
+
+                <div class="exp-content">
+                    <ul class="job-description">
+                        <li>Plano Estratégico de Marketing 2026-2028 para posicionar CarmoForm como referência em construção sustentável</li>
+                        <li>Rebranding completo, catálogos por soluções e ativação digital para geração de leads</li>
+                        <li>Comunicação de sustentabilidade integrada em narrativa de marca</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="job-title">Chief Sustainability Officer / Head of ESG Services</div>
+                        <div class="company">LOBA (B Corporation)</div>
+                        <div class="job-meta">Jun 2023 - Set 2025 | Oliveira de Azeméis</div>
+                    </div>
+                    <button class="exp-toggle">Mostrar mais</button>
+                </div>
+
+                <div class="exp-content">
+                    <ul class="job-description">
+                        <li>Liderança do processo de certificação B Corporation e criação de serviços ESG como novas linhas de receita</li>
+                        <li>Parcerias B2B SaaS com Smarthead, Ecochain, FuturePlus e Net Zero Cloud (Salesforce)</li>
+                        <li>64 ações de formação ESG para 160 colaboradores, 4 white papers, 2 webinars com 100+ participantes</li>
+                        <li>Participação em consórcio europeu Data4Circ e orador em eventos do setor</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item" style="background: linear-gradient(135deg, rgba(62,207,142,0.12) 0%, rgba(44,90,160,0.06) 100%); padding: 25px; border-radius: 6px; border-left: 5px solid #3ecf8e; border-top: 3px solid #3ecf8e;">
+                <div style="display: inline-block; background: #3ecf8e; color: white; padding: 4px 12px; border-radius: 12px; font-size: 0.8em; font-weight: 600; margin-bottom: 10px;">DESTAQUE</div>
+
+                <div class="exp-header">
+                    <div>
+                        <div class="job-title">Diretor de Marketing e Vendas</div>
+                        <div class="company">Global Wines S.A. - Produtor de vinhos líder na região do Dão (Cabriz, Casa de Santar)</div>
+                        <div class="job-meta">Fev 2015 - Dez 2022 | Carregal do Sal | Reporte direto ao CEO</div>
+                    </div>
+                    <button class="exp-toggle">Mostrar mais</button>
+                </div>
+
+                <ul class="job-description" style="margin-top: 15px;">
+                    <li>Crescimento do volume de negócios de 8M€ para 15M€ entre 2014 e 2022</li>
+                    <li>Quota de exportação passou de 30% para 51% do total de vendas; presença internacional cresceu de 31 para 45 mercados</li>
+                </ul>
+
+                <div class="exp-content">
+                    <ul class="job-description">
+                        <li>Implementação do CRM Salesforce e gestão e motivação da equipa de marketing e vendas de 12 pessoas, com melhoria da taxa de fecho e da previsibilidade</li>
+                        <li>Otimização do portefólio e dos preços, com reforço da liderança da Cabriz no Dão e do aumento da margem média por referência</li>
+                        <li>Definição de mercados prioritários, importadores e distribuidores com melhoria de mix e margem; estratégia de go-to-market e presença em feiras e eventos nacionais e internacionais</li>
+                        <li>Gestão de P&L, orçamento, estratégia de canais (retalho, on-trade, exportação) e key accounts</li>
+                        <li>Gestão das contas Lidl nacional e internacional, Sonae, Pingo Doce, Aldi nacional e internacional</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="job-title">Diretor de Vendas</div>
+                        <div class="company">Adega Mayor (Grupo Nabeiro / Delta Cafés)</div>
+                        <div class="job-meta">Fev 2012 - Jan 2015 | Lisboa</div>
+                    </div>
+                    <button class="exp-toggle">Mostrar mais</button>
+                </div>
+
+                <div class="exp-content">
+                    <ul class="job-description">
+                        <li>Aumento de 3M€ para 5M€; criação e formação de equipas de vendas não-cafeeiras</li>
+                        <li>Definição de modelo comercial e orçamento anual com previsão mensal</li>
+                        <li>Conquista de novos clientes e abertura de mercados de exportação</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="job-title">Consultor Independente de Vendas e Marketing</div>
+                        <div class="company">Freelance - Clientes selecionados</div>
+                        <div class="job-meta">Set 2009 - Jan 2011 | Portugal</div>
+                    </div>
+                    <button class="exp-toggle">Mostrar mais</button>
+                </div>
+
+                <div class="exp-content">
+                    <p style="margin-bottom: 12px; color: #666; font-size: 0.95em;">Clientes: Quinta do Quetzal, Casa da Arrochella, Grupo TMG, Grupo FOCOR</p>
+                    <ul class="job-description">
+                        <li>Estratégias de marketing e vendas nos setores de bens de consumo e agronegócio</li>
+                        <li>Definição de estratégia de portefólio, aquisição de novos clientes e colocação em grandes cadeias de retalho nacionais</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="job-title">Diretor de Unidade de Negócio</div>
+                        <div class="company">UVA Distribuição</div>
+                        <div class="job-meta">Mai 2008 - Ago 2009 | Matosinhos | Reporte direto ao CEO</div>
+                    </div>
+                    <button class="exp-toggle">Mostrar mais</button>
+                </div>
+
+                <div class="exp-content">
+                    <ul class="job-description">
+                        <li>Gestão da Unidade de Negócio de Vinhos</li>
+                        <li>Negociação de investimentos em marketing com produtores nacionais e internacionais; planos de marca; gestão de contas-chave; gestão da equipa de vendas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <div class="job-title">Gestor de Marca e Gestor de Conta</div>
+                        <div class="company">Grupo Super Bock (UNICER)</div>
+                        <div class="job-meta">Mar 2003 - Abr 2008 | Matosinhos</div>
+                    </div>
+                    <button class="exp-toggle">Mostrar mais</button>
+                </div>
+
+                <div class="exp-content">
+                    <ul class="job-description">
+                        <li>Gestão de marcas de vinho; estratégias de marketing e de media; coordenação de agências; apoio a contas de retalho</li>
+                        <li>Construção de base de marketing orientada por dados, com métricas de mercado e KPIs de desempenho</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formação -->
+        <section id="formacao">
+            <h2>Formação Académica</h2>
+
+            <div class="education-item">
+                <div class="degree">Pós-Graduação em Marketing Digital</div>
+                <div class="institution">Universidade do Minho Educação Executiva | 2018 - 2019</div>
+            </div>
+
+            <div class="education-item">
+                <div class="degree">Licenciatura em Marketing (pré-Bolonha)</div>
+                <div class="institution">Instituto Superior de Entre Douro e Vouga | 1995 - 2000</div>
+            </div>
+
+            <h3 style="margin-top: 30px; color: var(--primary); margin-bottom: 15px;">Formação Profissional e Certificações</h3>
+
+            <div class="cert-year">2026</div>
+            <ul class="cert-list">
+                <li>AI Fluency Framework & Foundations - Anthropic</li>
+                <li>Introduction to Claude Cowork - Anthropic</li>
+                <li>Claude 101 - Anthropic</li>
+                <li>Introdução à Inteligência Artificial para os negócios - Code For All</li>
+            </ul>
+
+            <div class="cert-year">2024 - 2023</div>
+            <ul class="cert-list">
+                <li>ESRS - CSRD Reporting Standards - Academia Stravillia</li>
+                <li>Normas de Reporte GRI, ODS e Direitos Humanos - Academia Stravillia</li>
+                <li>Sustentabilidade: Estratégias e Oportunidades - MIT Executive School</li>
+                <li>Taxonomia e Finanças Verdes - PwC</li>
+                <li>ISO 14001, ACV e Economia Circular - APCER</li>
+                <li>Design Thinking - ECL Escola de Comércio de Lisboa</li>
+                <li>Design Thinking Disruptivo - The Unschool of Disruptive Design</li>
+                <li>Sustentabilidade - Academia G</li>
+            </ul>
+
+            <div class="cert-year">2022 - 2014</div>
+            <ul class="cert-list">
+                <li>Chief Happiness Officer - Happiness Business School</li>
+                <li>Gestão de Categorias - AC Nielsen Executive Training</li>
+                <li>CRM - Católica Lisbon Business and Economics</li>
+                <li>CCP - Certificado de Competência Pedagógica - IEFP</li>
+                <li>Técnicas de Vendas e Negociação - ACG Consulting</li>
+            </ul>
+        </section>
+
+        <!-- Idiomas -->
+        <section>
+            <h2>Idiomas</h2>
+            <div class="language-group">
+                <div class="language-item">
+                    <div class="language-name">Português</div>
+                    <div class="language-level">Nativo</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Inglês</div>
+                    <div class="language-level">Fluente (oral e escrito)</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Espanhol</div>
+                    <div class="language-level">Intermédio</div>
+                </div>
+                <div class="language-item">
+                    <div class="language-name">Francês</div>
+                    <div class="language-level">Básico</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Atividades Profissionais -->
+        <section id="atividades">
+            <h2>Atividades Profissionais e Participações</h2>
+            <ul class="activity-list">
+                <li>Wine Games - A sustentabilidade no vinho | CVR Dão (orador)</li>
+                <li>LOBA Positive Talks - Sustainable Brand | LOBA (orador)</li>
+                <li>Artigo de opinião sobre greenwashing | Revista Briefing</li>
+                <li>ISVOUGA Marketing Sessions - Estratégias para um futuro sustentável</li>
+                <li>Universidade de Aveiro - Aula aberta sobre Marcas com Propósito</li>
+                <li>Revista +Carmo - Como comunicar sustentabilidade</li>
+                <li>Consultoria estratégica de marca e rebranding | NEO Seguros</li>
+                <li>Consultoria estratégica de marca e rebranding | Onex (ex-Villas & Hotmec)</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-signature">
+            <img src="assinatura_rui_invertido.png" alt="Assinatura Rui Correia">
+        </div>
+        <p>&copy; 2026 Rui Correia. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.exp-toggle').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const content = this.closest('.experience-item').querySelector('.exp-content');
+                if (content) {
+                    content.classList.toggle('expanded');
+                    this.textContent = content.classList.contains('expanded') ? 'Mostrar menos' : 'Mostrar mais';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
